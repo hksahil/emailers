@@ -1,0 +1,946 @@
+<!doctype html>
+<html lang="en">
+​
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport"
+		content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0" />
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title>User Emailer</title>
+	<meta name="keywords" content="">
+	<meta name="description" content="">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@500;600;700&display=swap" rel="stylesheet">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+	<link rel="preload" href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@500;600;700&display=swap"
+		as="font" />
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@500;600;700&display=swap"
+		media="print" onload="this.media='all'" />
+	<style type="text/css">
+		/* CLIENT-SPECIFIC STYLES */
+
+		body,
+		table,
+		td,
+		a {
+			-webkit-text-size-adjust: 100%;
+			-ms-text-size-adjust: 100%;
+		}
+
+		table,
+		td {
+			mso-table-lspace: 0pt;
+			mso-table-rspace: 0pt;
+		}
+
+		img {
+			-ms-interpolation-mode: bicubic;
+		}
+
+		/* RESET STYLES */
+
+		img {
+			border: 0;
+			line-height: 100%;
+			outline: none;
+			text-decoration: none;
+		}
+
+		table {
+			/* border-collapse: collapse !important; */
+			border: none;
+		}
+
+		body {
+			height: 100% !important;
+			margin: 0 !important;
+			padding: 0 !important;
+			width: 100% !important;
+		}
+
+		/* iOS BLUE LINKS */
+
+		a[x-apple-data-detectors] {
+			color: inherit !important;
+			text-decoration: none !important;
+			font-size: inherit !important;
+			font-family: inherit !important;
+			font-weight: inherit !important;
+			line-height: inherit !important;
+		}
+
+		/* GMAIL BLUE LINKS */
+
+		u+#body a {
+			color: inherit;
+			text-decoration: none;
+			font-size: inherit;
+			font-family: inherit;
+			font-weight: inherit;
+			line-height: inherit;
+		}
+
+		/* SAMSUNG MAIL BLUE LINKS */
+
+		#MessageViewBody a {
+			color: inherit;
+			text-decoration: none;
+			font-size: inherit;
+			font-family: inherit;
+			font-weight: inherit;
+			line-height: inherit;
+		}
+
+		/* Universal styles for links and stuff */
+
+		a {
+			color: #229efd;
+			/* font-weight: bold; */
+		}
+
+		a:hover {
+			color: #fd6350;
+			text-decoration: none;
+		}
+
+		a.button {
+			transition: all 0.2s ease;
+		}
+
+		a.button:hover {
+			background-color: #fd6350 !important;
+			box-shadow: 0px 12px 24px rgba(0, 0, 0, 0.2);
+			transform: translateY(-10px);
+		}
+
+		.thank-txt {
+			text-align: right;
+		}
+
+		.border {
+			padding: 0px 4% 16px 4%;
+		}
+
+		.border-left {
+			border-left: 1px solid #dedcdc;
+		}
+
+		.mf-l {
+			float: left;
+		}
+
+		.mf-r {
+			float: right;
+		}
+
+		.footer-row {
+			width: calc(50% - 1px);
+		}
+
+		.footer-txt-center {
+			text-align: center;
+		}
+
+		.footer-img-desk {
+			display: block;
+		}
+
+		.footer-img-mobi {
+			display: none;
+		}
+
+		.property-txt-desk {
+			display: inline-block;
+		}
+
+		.property-txt-mobi {
+			display: none;
+		}
+
+		.slot-card-border {
+			border-bottom: 1px solid #DEDCDC;
+		}
+
+		.slot-card-border:last-child {
+			border-bottom: none;
+		}
+
+		.slot-card-padding {
+			padding: 16px 8px;
+			line-height: 1;
+		}
+
+		ul li {
+			margin-bottom: 8px;
+		}
+
+		ul li:last-child {
+			margin-bottom: 0;
+		}
+
+		@media (max-width: 480px) {
+			.thank-txt {
+				text-align: left;
+			}
+
+			.border {
+				border-top: 1px solid #dedcdc;
+				margin: 16px 4% 0 4%;
+				padding: 24px 0 10px 0;
+			}
+
+			.border-left {
+				border: none;
+			}
+
+			.footer-row {
+				width: 100%;
+			}
+
+			.mf-l {
+				float: none;
+			}
+
+			.mf-r {
+				float: none;
+			}
+
+			.footer-txt-center {
+				text-align: left;
+			}
+
+			.footer-img-desk {
+				display: none;
+			}
+
+			.footer-img-mobi {
+				display: inline-block;
+			}
+
+			.property-txt-desk {
+				display: none;
+			}
+
+			.property-txt-mobi {
+				display: inline-block;
+			}
+
+			.slot-card-padding {
+				padding: 16px 8px 0px 8px;
+			}
+		}
+
+  /* .things-remember{
+      padding-left:4%;
+      padding-right:4%;
+						color:rgb(66, 66, 66);
+    } */
+
+		.things-remember p span {
+
+        position: relative;
+        font-size: 12px;
+        line-height: 21px;
+        letter-spacing: 0.25px;
+        padding-bottom: 8px;
+        margin: 0;
+        color: rgb(66, 66, 66);
+        font-family: Arial;
+    }
+
+    .things-remember p {
+        position: relative;
+        font-size: 12px;
+								color:rgb(66, 66, 66);
+        font-weight: 500;
+        line-height: 15px;
+        /* padding-left: 16px; */
+        letter-spacing: 0.25px;
+        padding-bottom: 8px;
+        margin: 0;
+    }
+
+	</style>
+</head>
+​
+
+<body style="font-family: Arial, sans-serif;">
+	<div style="max-width: 600px; margin: 0 auto; padding: 0px">
+		<!-- <table style="background-color: #ffffff;" align="center" cellpadding="0px" cellspacing="0px" width="100%"
+			style="border-collapse: collapse; overflow-x: auto;"> -->
+   		<table style="background-color: #ffffff;border:1px solid #dedcdc;border-collapse:initial" align="center" cellpadding="0px" cellspacing="0px" width="100%"
+			style="overflow-x: auto;">
+			<tr>
+				<td colspan="2" style="padding: 0 20px;display: inline-block;margin-bottom: 16px;margin-top:16px">
+					<a href="https://www.khelomore.com"><img
+							src="https://res.cloudinary.com/dwrllj32t/image/upload/v1604420224/KM_Logo_lz9zje.png"
+							alt="khelommore.com_logo" width="170" height="46"></img>
+					</a>
+				</td>
+			</tr>
+
+
+<!-- reserved banner starts-->
+<tr style="background: #CC0000">
+ <td style="padding-left: 4%;
+ padding-top: 8px; width: 60%">
+  <div style="color: white;
+  font-family: Arial;
+		letter-spacing: 0.08px;
+  font-size: 12px;
+  font-weight: bold;">
+   Status: Cancelled &#8226;<span> $transactionDate</span></div>
+   <div style="color: white;
+			letter-spacing: 0.08px;
+   font-family: Arial;
+   font-size: 12px;
+   padding-bottom: 8px;
+   padding-top: 8px;">
+    Booked by $bookingUserName</div>
+ </td>
+ <td style="text-align: right;padding-right: 4%;">
+  <a href=$link>
+   <div style="text-transform: uppercase; font-weight: 600;color: #757575;padding-top: 8px;">
+
+   </div>
+  </a>
+ </td>
+</tr>
+
+<!-- reserved banner ends-->
+
+<!-- reserved header starts -->
+
+<tr>
+				<td colspan="2" style="padding: 0 4%; color: #424242;">
+
+					<div style=" margin-bottom: 8px;margin-top:16px;color: rgb(66, 66, 66);
+font-family: Arial;
+font-size: 15px;
+font-weight: bold;">Hi $userName,
+					</div>
+     <div style=" margin-bottom: 15px;margin-top:9px;color: rgb(66, 66, 66);
+font-family: Arial;
+font-size: 15px;
+font-weight: bold;">Venue booking is cancelled!
+					</div>
+
+					<div style="color: rgb(117, 117, 117);;
+font-family: Arial;
+font-size: 15px;">Since the user missed the payment deadline - this venue booking is cancelled.
+We’ve initiated a <b>Refund</b> for the user.</div>
+     <!-- <div style="margin-top: 16px;
+      font-size: 15px;
+     color: rgb(117, 117, 117);
+     font-family: Arial;
+     line-height: 21px;
+     ">Since the user missed the payment deadline this venue booking is cancelled. We’ve initiated a Refund for the user. </b></div> -->
+				</td>
+			</tr>
+
+<!-- reserved banner ends -->
+
+
+
+   <tr>
+    <td colspan="2">
+     <div style=" border-top: 1px solid #dedcdc;margin: 24px 0px 16px 0px;"></div>
+    </td>
+   </tr>
+
+
+
+<!-- User details starts -->
+<tr>
+ <td style="padding: 0 4%;" colspan="2">
+   <table style=" width: 100%;">
+   <tr>
+      <td style="
+      color: rgb(66, 66, 66);
+      font-family: Arial;
+      font-size: 15px;
+      font-weight: bold;">
+       User Details
+      </td>
+
+   </tr>
+   <tr>
+    <td colspan="2" style="padding: 0px 0; width: 100%">
+
+
+     <table width="100%"
+      style="border-radius: 5px; color: #424242;font-size: 15px;"
+      cellpadding="10px" cellspacing="0px">
+      <tr>
+       <td style="padding: 16px 0 0 0px;">
+        <div style="
+        font-family: Arial;
+        font-size: 14px;"><span style="color: rgb(117, 117, 117);">Name: </span>$userName</span></div>
+       </td>
+
+      </tr>
+
+      <tr>
+
+       <td style="padding: 16px 0px 0px 0px;">
+        <div style="
+        font-family: Arial;
+        font-size: 14px;"> <span style="color: rgb(117, 117, 117);">Mobile No.</span>: $mobileNumber </span>
+
+        </div>
+       </td>
+
+
+      </tr>
+
+      <tr>
+       <td style="padding: 16px 0px 0px 0px;">
+        <div style="
+        font-family: Arial;
+        font-size: 14px;"><span style="color: rgb(117, 117, 117);">Email ID:</span> $email</span>
+       </div>
+       </td>
+      </tr>
+     </table>
+    </td>
+   </tr>
+  </table>
+ </td>
+</tr>
+
+<!-- user details ends -->
+
+   <tr>
+    <td colspan="2">
+     <div style=" border-top: 1px solid #dedcdc; margin:16px 0px"></div>
+    </td>
+   </tr>
+
+
+			<tr>
+				<td style="padding-left: 4%; width: 50%">
+					<div style="color: rgb(66, 66, 66);
+font-family: Arial;
+font-size: 15px;
+font-weight: bold">
+						Booking Details</div>
+				</td>
+				<td style="text-align: right;padding-right: 4%;">
+					<a  style="text-decoration:none" href=$link>
+						<div style="color: rgb(117, 117, 117);
+font-family: Arial;
+font-size: 15px;">
+							ID: $bookingid
+						</div>
+					</a>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2" style="padding-left: 4%; ">
+					<table>
+
+						<tr>
+							<td style="padding-top: 24px; width: 5px;" rowspan=""> <img src="$venue_image"
+									alt="venueImage" width="64" height="64"
+									style="border-radius: 4px; margin-right: 16px;"></img>
+							</td>
+							<td colspan="2" style="vertical-align: top;padding-top: 24px;">
+								<a  style="text-decoration:none" href=$venuelink>
+									<div
+										style="text-align: left;color: rgb(66, 66, 66);
+font-family: Arial;
+font-size: 14px;
+font-weight: bold;margin-bottom: 8px;">
+										$venueName
+									</div>
+								</a>
+								<div
+									style="color: rgb(117, 117, 117);
+font-family: Arial;
+font-size: 12px;line-height: 16px;letter-spacing: 0.4px;">
+									$location
+								</div>
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+
+<!-- Horizontal line -->
+<tr>
+ <td colspan="2">
+  <div style=" border-top: 1px solid #dedcdc;margin:24px 0px"></div>
+ </td>
+</tr>
+
+
+
+<tr>
+ <td colspan="2">
+
+<tr>
+ <td colspan="2" style="padding-top: 24px; padding: 0 4%;">
+  <div style="color: rgb(66, 66, 66);
+  font-family: Arial;
+  font-size: 15px;
+  font-weight: bold;">
+   Slot Details
+  </div>
+ </td>
+</tr>
+
+<tr>
+ <td colspan="2" style="padding-left: 4%;
+ padding-right: 4%;
+ padding-top: 5px;
+ padding-bottom: 0px; height: auto;">
+  <table
+   style=" height: auto; width: 100%; border-radius: 5px;  border-collapse: collapse;"
+   cellspacing="0px">
+   <tr>
+    <td >
+             <span style="display:inline-block;padding-top:10px;height: 24px; width: 24px;vertical-align: middle;    padding-bottom: 10px;"><img src="https://km-landing.s3.ap-south-1.amazonaws.com/emailer-images/ic_insert_invitation_48px-512.png"></span>
+     <div
+      style="color: rgb(117, 117, 117);
+               font-family: Arial;
+               font-size: 15px;
+               display: inline-block;
+               vertical-align: middle;
+               padding-top:10px;
+               padding-bottom: 10px;
+               ">
+      $record.date
+     </div>
+    </td>
+   </tr>
+   #foreach( $timeslot in $record.timeslots )
+   <tbody class="slot-card-border" style="display: block;padding-top: 7px;">
+    <tr>
+     <td
+      style="display: inline-block;
+      color: rgb(66, 66, 66);
+      font-family: Arial;
+      font-size: 15px;
+      font-weight: bold;">
+      $timeslot.timeslot
+     </td>
+    </tr>
+    <tr style="display: block;">
+     <td>
+     <td class='slot-bar'
+      style="display: inline-block;
+      color: rgb(117, 117, 117);
+      font-family: Arial;
+      font-size: 12px;
+      padding-bottom: 9px;
+      ">
+      <!-- $timeslot.property | <span>$timeslot.sport</span> -->
+      $timeslot.property
+     </td>
+
+
+     <td
+      style="float: right; clear: both;color: rgb(66, 66, 66);
+      font-family: Arial;
+      font-size: 15px;
+      font-weight: bold;
+      padding-top: 0px;
+      padding-bottom: 9px;
+      ">
+      &#8377;$timeslot.price
+     </td>
+
+ </td>
+</tr>
+
+</tbody>
+#end
+</table>
+</td>
+</tr>
+
+<!-- </table> -->
+</td>
+</tr>
+
+<!-- Horizontal line -->
+<tr>
+<td colspan="2">
+ <div style=" border-top: 1px solid #dedcdc; width: 100;margin-top: 16px;
+ margin-bottom: 25px;"></div>
+</td>
+</tr>
+
+		<tr>
+			<td style="padding: 0 4%;" colspan="2">
+				 <table style="width: 100%;">
+					<tr>
+        <td style="
+        color: rgb(66, 66, 66);
+        font-family: Arial;
+        font-size: 15px;
+        font-weight: bold;">
+         Bill Details
+        </td>
+        <td style=" text-align: right;color: rgb(117, 117, 117);
+        font-family: Arial;
+        font-size: 15px;">
+         $transactionDate
+        </td>
+					</tr>
+					<tr>
+						<td colspan="2" style="padding: 10px 0px 0px 0px; width: 100%">
+
+
+							<table width="100%"
+								style="border-radius: 5px; color: #424242;font-size: 15px;"
+								cellpadding="10px" cellspacing="0px">
+								<tr>
+									<td style="padding: 7px 0 0 0px;">
+										<div style="color: rgb(66, 66, 66);
+          font-family: Arial;
+          font-size: 12px;">Slot(s) Price</div>
+									</td>
+									<td rowspan="" style="text-align:right; padding:7px 0px 0 0;">
+										<div style="color: rgb(66, 66, 66);
+          font-family: Arial;
+          font-size: 12px;">&#8377;$subTotal</div>
+									</td>
+								</tr>
+
+								<tr>
+									#if ($discountPrice > 0)
+									<td style="padding: 8px 0px 0px 0px;">
+										<div style="color: rgb(66, 66, 66);
+          font-family: Arial;
+          font-size: 12px;">Coupon
+											<span
+												style="font-size: 10px; color: #757575;font-size: 12px;font-weight: 500;line-height: 16px;letter-spacing: 0.4px;">
+												($discountCoupon)
+											</span>
+										</div>
+									</td>
+									<td style=" text-align: right; padding-right: 0px;
+         padding-top: 8px;
+         padding-bottom: 0px;">
+										<div style="color: rgb(66, 66, 66);
+          font-family: Arial;
+          font-size: 12px;">-&#8377;$discountPrice</div>
+									</td>
+									#end
+								</tr>
+
+								<tr>
+									<td style="padding: 8px 0px 16px 0px;">
+										<div style="color: rgb(66, 66, 66);
+          font-family: Arial;
+          font-size: 12px;">Convenience fees
+<!-- #if ($convFeePerc > 0) -->
+<span
+style="font-size: 10px; color: #757575;font-size: 12px;font-weight: 500;line-height: 16px;letter-spacing: 0.4px;">
+($convFeePerc % ON BASE PRICE)
+</span>
+<!-- #end -->
+<!-- <div>(2% ON BASE PRICE)</div> -->
+
+         </div>
+
+
+									</td>
+									<td style=" text-align: right; padding-right: 0px;
+         padding-top: 8px;
+         padding-bottom: 16px;">
+										<div style="color: rgb(66, 66, 66);
+          font-family: Arial;
+          font-size: 12px;">&#8377;$convenienceFees</div>
+									</td>
+								</tr>
+
+
+
+        <tr>
+									<td colspan="2" style="padding:0px">
+										<div style=" border-top: 1px solid #dedcdc; width: 100;"></div>
+									</td>
+								</tr>
+
+ #if ($isSplitPayment > 0)
+ <tr>
+  <td style="padding:16px 0px 0px 0px;">
+   <div style="color: rgb(66, 66, 66);
+   font-family: Arial;
+   font-size: 12px;
+   font-weight: bold;">Subtotal</div>
+
+   <!-- <div>(2% ON BASE PRICE)</div> -->
+
+  </td>
+  <td style=" text-align: right; padding-right: 0px ;padding-top:16px;padding-bottom:0px">
+   <div style="color: rgb(66, 66, 66);
+   font-family: Arial;
+   font-size: 12px;
+   font-weight: bold;">&#8377;$splitTotal</div>
+  </td>
+ </tr>
+<tr>
+
+</tr>
+       #end
+
+        <!-- Horizontal line -->
+
+							</table>
+						</td>
+					</tr>
+ <tr>
+									<td colspan="2" style="padding: 0px">
+										<div style=" border-top: 1px solid #dedcdc; width: 100;margin: 0px 0px;"></div>
+									</td>
+								</tr>
+                                #if ($pendingAmount > 0)
+                                 <tr>
+                                        <td style="padding: 16px 0px 24px 0px;">
+											<div style="color: rgb(66, 66, 66);
+           font-family: Arial;
+           font-size: 15px;
+           font-weight: bold;">Amount Received</div>
+										</td>
+										<td rowspan="" style="text-align:right; padding: 16px 0px 24px 0px;">
+											<div style="color: rgb(66, 66, 66);
+           font-family: Arial;
+           font-size: 15px;
+           font-weight: bold;">&#8377;$total</div>
+										</td>
+									</tr>
+                                    #end
+
+
+
+				</table>
+			</td>
+		</tr>
+
+
+ <!-- <tr>
+        <td colspan="2" style="padding-left:0px;padding-right:0px">
+        <div class="parent" style="display:flex;background: rgba(255, 187, 51, 0.2);">
+          <div><img style="padding-left: 24px;
+    padding-top: 7px;"src="https://km-landing.s3.ap-south-1.amazonaws.com/emailer-images/split-payment/info.png"></div>
+          <div style="
+    padding-left: 8px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-right: 15px;
+    font-size: 14px;
+    width:100%;
+    text-align:left">Pay balance <span>4000</span> <span>(7 players)</span> <span>before 25 Aug,07:30 PM</span></div>
+        </div>
+        </td>
+</tr> -->
+
+<!-- <tr >
+ <td align="center" colspan="2" style="padding: 0 4%;">
+ <a href="" style="text-decoration:none;">
+  <div
+  style="
+  margin-top:24px;
+  background: rgb(25, 163, 255);
+  border-radius: 2px;
+  border: 1px solid rgb(25, 163, 255);
+  height: 40px;">
+  <p style="color: rgb(255, 255, 255);
+  font-family: Arial;
+  font-size: 12px;
+  font-weight: bold;
+  height: 12px;
+  text-align: center;
+  text-transform: uppercase;
+  ">
+  Share Payment Link</p></div>
+  </a>
+
+ </td>
+
+ </tr> -->
+
+
+<!-- <tr >
+ <td align="center" colspan="2" style="padding: 0 4%;">
+ <a href="" style="text-decoration:none;">
+  <div
+  style="
+  margin-top:16px;
+  background: rgb(255, 255, 255);
+  border-radius: 2px;
+  border: 1px solid rgb(25, 163, 255);
+  height: 40px;">
+  <p style="text-decoration:none;color: rgb(25, 163, 255);
+  font-size: 12px;
+  font-weight: bold;
+  height: 12px;
+  text-align: center;
+  font-family: Arial;
+  text-transform: uppercase;
+  ">
+  Check Payment Details</p></div>
+  </a>
+
+ </td>
+
+ </tr> -->
+
+<!-- Horizontal line -->
+<tr>
+ <td colspan="2" style="padding-left: 0px;padding-right:0px;">
+  <div style=" border-top: 1px solid #dedcdc; margin:0px 0px 0px 0px"></div>
+ </td>
+</tr>
+
+<!-- LINK BUTTONS ENDS -->
+<tr>
+ <td colspan="2">
+  <div style="padding: 0 4%;">
+   <p style="color: rgb(117, 117, 117);
+   font-family: Arial;
+   font-size: 12px;
+   letter-spacing: 0.08px;
+   line-height: 17px;
+   text-align: center;
+   margin-top: 24px;
+   margin-bottom: 24px;
+">We’ve initiated <b>a refund of $total</b> for the user.
+   </p>
+  </div>
+  <div style="background-color:#f6e6e6;padding-bottom: 24px;">
+   <div style="padding: 24px 4% 8px 4%; text-transform: uppercase;color: rgb(117, 117, 117);
+   font-family: Arial;
+   font-size: 15px;
+   font-weight: bold;">
+    Important instructions</div>
+   <div class="things-remember" style="padding-left:4%;
+   padding-right:4%;
+   color:rgb(66, 66, 66);">
+$thingsToRemember
+  </div>
+  </div>
+  <div style="color: rgb(66, 66, 66);
+  font-family: Arial;
+  font-size: 15px;
+  height: 15px;
+  letter-spacing: 0.1px;
+  line-height: 15px;
+   padding: 24px 4% 0 4%;">Have a great game!</div>
+ </td>
+</tr>
+<tfoot>
+ <tr>
+  <td colspan="2" style="padding:0 4%;text-align: left;">
+   <div style="color: rgb(66, 66, 66);
+   font-family: Arial;
+   font-size: 15px;
+   height: 15px;
+   letter-spacing: 0.1px;
+   line-height: 15px;
+   padding-top: 18px;">Thank you,</div>
+   <div style="color: rgb(66, 66, 66);
+   font-family: Arial;
+   font-size: 15px;
+   height: 15px;
+   letter-spacing: 0.1px;
+   line-height: 15px;
+   padding-top: 6px;
+   padding-bottom: 24px;
+   ">Team Khelomore </div>
+  </td>
+ </tr>
+
+
+ <tr>
+  <td colspan="2">
+   <div style=" border-top: 1px solid #dedcdc; margin:0px 0px 16px 0px"></div>
+  </td>
+ </tr>
+<!-- Download CTA STARTS-->
+<tr>
+ <td colspan="2">
+<div class="row">
+ <div class="column" style="float: left;
+ text-align: right;width: 50%;">
+
+<a href="https://play.google.com/store/apps/details?id=com.khelomore.pnp">
+<img style="width: 148px;padding-right:12px" src="https://km-landing.s3.ap-south-1.amazonaws.com/emailer-images/split-payment/Google.png" ></a>
+</div>
+ <div class="column" style="float: left
+ ;text-align: left;">
+<a href="https://apps.apple.com/us/app/khelomore-book-sports-venues/id1536558207">
+<img style="width: 148px;padding-left:12px" src="https://km-landing.s3.ap-south-1.amazonaws.com/emailer-images/split-payment/Apple.png"></a>
+
+</div>
+</div>
+</td>
+</tr>
+
+   <!-- SOCIAL ICONS -->
+			<tr>
+				<td style="padding:0 4%;" colspan="2">
+					<div style="padding-top: 24px;">
+						<div
+							style="color: rgb(117, 117, 117);
+       font-family: Arial;
+       font-weight: bold;;
+       font-size: 15px;text-align: center;">
+							Follow us on</div>
+						<div style="padding-top: 16px;padding-bottom:13px;text-align: center;">
+							<a style="color: #ff4000;" href="https://plus.google.com/s/khelomore"> <img
+									style="height:22px; width: 22px;"
+									src="https://km-landing.s3.ap-south-1.amazonaws.com/emailer-images/split-payment/gplus.jpg"
+									alt="gplus" /></a>
+							<a style="color: #ff4000; " href="https://twitter.com/khelomore">
+								<img style="height:22px;padding-left: 20px; width: 22px;"
+									src="https://km-landing.s3.ap-south-1.amazonaws.com/emailer-images/split-payment/twitter.jpg"
+									alt="twitter" /></a>
+							<a style="color: #ff4000;"
+								href="https://www.facebook.com/KheloMore/"> <img
+									style="height:22px; padding-left: 20px; width: 22px;"
+									src="https://km-landing.s3.ap-south-1.amazonaws.com/emailer-images/split-payment/facebook.jpg"
+									alt="facebook" /></a>
+							<a style="color: #ff4000; "
+								href="https://www.linkedin.com/company/khelomore/"> <img style="height:22px;padding-left: 20px; width: 22px;"
+									src="https://km-landing.s3.ap-south-1.amazonaws.com/emailer-images/split-payment/linkedin.jpg"
+									alt="linkedin" /> </a>
+         <a style="color: #ff4000;"
+								href="https://www.instagram.com/khelomoreindia/"> <img style="height:22px; padding-left: 20px; width: 22px;"
+									src="https://km-landing.s3.ap-south-1.amazonaws.com/emailer-images/split-payment/instagram.jpg"
+									alt="instagram" /></a>
+						</div>
+					</div>
+
+				</td>
+			</tr>
+
+
+   <tr>
+    <td colspan="2">
+     <div style=" border-top: 1px solid #dedcdc; margin:0px 0px"></div>
+    </td>
+   </tr>
+
+   <tr>
+    <td colspan="2">
+     <div style="padding: 0 4%;">
+      <p style="color: rgb(117, 117, 117);
+      font-family: Arial;
+      text-align: center;
+      font-size: 15px;">For Further assistance,contact us on <a style="color:#19a3ff;text-decoration:none !important;">info@khelomore.com</a> or <span style="color:#19a3ff">022-68493700</span>
+      </p>
+     </div>
+</td>
+   </tr>
+
+		</tfoot>
+		</table>
+	</div>
+</body>
+
+</html>
